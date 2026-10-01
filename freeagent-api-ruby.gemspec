@@ -17,9 +17,10 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "rspec"
   s.add_development_dependency "pry"
-
-  s.add_runtime_dependency "oauth2", ">= 0.9.2", "< 2.0"
+  s.add_runtime_dependency "oauth2", ">= 2.0", "< 3"
   s.add_runtime_dependency "multi_json"
+  s.files = Dir["lib/**/*.rb"] + ["README.md"]
+  s.require_paths = ["lib"]
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

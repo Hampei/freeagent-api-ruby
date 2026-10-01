@@ -18,6 +18,9 @@ module FreeAgent
         :site => Client.site,
         :authorize_url => Client.authorize_url,
         :token_url => Client.token_url,
+        # oauth2 v2 defaults to :basic_auth; FreeAgent expects the credentials
+        # in the request body like oauth2 v1 sent them.
+        :auth_scheme => :request_body,
         :connection_opts => Client.connection_opts
       }
     end
